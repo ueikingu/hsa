@@ -20,7 +20,7 @@
       position: relative;
       overflow: hidden; /* Prevent scrolling */
     }
-    
+
     .container {
       max-width: 600px;
       padding: 20px;
@@ -54,8 +54,8 @@
       position: fixed; /* Make it cover the whole screen */
       top: 0;
       left: 0;
-      width: 100vw; /* Use viewport width */
-      height: 100vh; /* Use viewport height */
+      width: 100%; /* Use percentage for width */
+      height: 100%; /* Use percentage for height */
       z-index: 999; /* Ensure it is on top */
       display: none; /* Initially hidden */
     }
@@ -81,7 +81,11 @@
           url: 'https://general-runtime.voiceflow.com',
           versionID: '66efef1e5fb6a1306168280b' // Ensure this is the correct version ID
         });
-        document.getElementById('voiceflow-chatbot').style.display = 'block'; // Show the chatbot after loading
+
+        // Use a timeout to ensure the chatbot is fully loaded before showing it
+        setTimeout(function() {
+          document.getElementById('voiceflow-chatbot').style.display = 'block'; // Show the chatbot after loading
+        }, 100); // 100 milliseconds timeout
       }
       v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
       v.type = "text/javascript"; 
