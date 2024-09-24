@@ -73,32 +73,22 @@
   <div id="voiceflow-chatbot"></div> <!-- Container for the Voiceflow chatbot -->
 
   <script type="text/javascript">
-  
     (function(d, t) {
-    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-    v.onload = function() {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
         window.voiceflow.chat.load({
-            verify: { projectID: '66efef1e5fb6a1306168280a' },
-            url: 'https://general-runtime.voiceflow.com/',
-            versionID: '66efef1e5fb6a1306168280b'
+          verify: { projectID: '66efef1e5fb6a1306168280a' },
+          url: 'https://general-runtime.voiceflow.com/',
+          versionID: '66efef1e5fb6a1306168280b'
         }).then(() => {
-            setTimeout(function() {
-                window.voiceflow.chat.open();
-                // Add fullscreen styles
-                var chatWidget = document.querySelector('.voiceflow-chat-widget');
-                if (chatWidget) {
-                    chatWidget.style.position = 'fixed';
-                    chatWidget.style.top = '0';
-                    chatWidget.style.left = '0';
-                    chatWidget.style.width = '100%';
-                    chatWidget.style.height = '100%';
-                    chatWidget.style.zIndex = '9999';
-                }
-            }, 1000);
+          // Open the chatbot immediately upon loading
+          window.voiceflow.chat.open(); // This should trigger the chat window
         });
-    }
-    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-})(document, 'script');
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+      v.type = "text/javascript"; 
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
   </script>
 </body>
 </html>
