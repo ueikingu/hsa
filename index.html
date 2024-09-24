@@ -91,6 +91,31 @@
       v.type = "text/javascript"; 
       s.parentNode.insertBefore(v, s);
     })(document, 'script');
+    (function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+        window.voiceflow.chat.load({
+            verify: { projectID: 'xxxxxxxxxxxxxxxxxxxxx' },
+            url: 'https://general-runtime.voiceflow.com/',
+            versionID: 'production'
+        }).then(() => {
+            setTimeout(function() {
+                window.voiceflow.chat.open();
+                // Add fullscreen styles
+                var chatWidget = document.querySelector('.voiceflow-chat-widget');
+                if (chatWidget) {
+                    chatWidget.style.position = 'fixed';
+                    chatWidget.style.top = '0';
+                    chatWidget.style.left = '0';
+                    chatWidget.style.width = '100%';
+                    chatWidget.style.height = '100%';
+                    chatWidget.style.zIndex = '9999';
+                }
+            }, 1000);
+        });
+    }
+    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+})(document, 'script');
   </script>
 </body>
 </html>
