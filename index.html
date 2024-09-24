@@ -49,25 +49,18 @@
     <a href="https://heritagestrings.sg/">Click here</a>
   </div>
 
-  <script>
-    (function(d, t) {
+<script type="text/javascript">
+  (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
         window.voiceflow.chat.load({
           verify: { projectID: '66efef1e5fb6a1306168280a' },
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production'
-        }).then(() => {
-          console.log('Voiceflow chat loaded successfully');
-        }).catch(error => {
-          console.error('Error loading Voiceflow chat:', error);
         });
       }
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
-      v.type = "text/javascript"; 
-      v.async = true;
-      s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 </body>
 </html>
