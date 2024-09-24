@@ -17,7 +17,7 @@
       background-color: #fff5f5;
       background-image: radial-gradient(#ffcccc 5%, transparent 5%);
       background-size: 40px 40px;
-      position: relative; /* Enable positioning for child elements */
+      position: relative;
       overflow: hidden; /* Prevent scrolling */
     }
     
@@ -54,8 +54,8 @@
       position: fixed; /* Make it cover the whole screen */
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100vw; /* Use viewport width */
+      height: 100vh; /* Use viewport height */
       z-index: 999; /* Ensure it is on top */
       display: none; /* Initially hidden */
     }
@@ -64,4 +64,29 @@
 <body>
 
   <div class="container">
-    
+    <img alt="Heritage Strings & Arts logo" title="logo" src="https://heritagestrings.sg/wp-content/uploads/2021/10/logo.png">
+    <h1>Welcome to Heritage Strings & Arts!</h1>
+    <p>Do visit our official website for more details</p>
+    <a href="https://heritagestrings.sg/">Click here</a>
+  </div>
+
+  <div id="voiceflow-chatbot"></div> <!-- Container for the Voiceflow chatbot -->
+
+  <script type="text/javascript">
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '66efef1e5fb6a1306168280a' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production' // Ensure this is the correct version ID
+        });
+        document.getElementById('voiceflow-chatbot').style.display = 'block'; // Show the chatbot after loading
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+      v.type = "text/javascript"; 
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html>
