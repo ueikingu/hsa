@@ -1,62 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heritage Strings & Arts</title>
-  <style>
-    /* Center content */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      background-color: #fff5f5;
-      background-image: radial-gradient(#ffcccc 5%, transparent 5%);
-      background-size: 40px 40px;
-    }
-
-    /* Button styling */
-    a {
-      text-decoration: none;
-      font-size: 1.2em;
-      color: white;
-      background-color: #ff6666;
-      padding: 15px 25px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-
-    a:hover {
-      background-color: #ff4d4d;
-    }
-  </style>
-</head>
-<body>
-
-  <div>
-    <h1>Welcome to Heritage Strings & Arts!</h1>
-    <p>Do visit our official website for more details</p>
-    <a href="https://heritagestrings.sg/">Click here</a>
-  </div>
-
-  <!-- Insert your Voiceflow chatbot code here -->
-  <script type="text/javascript">
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-          window.voiceflow.chat.load({
-            verify: { projectID: '66efef1e5fb6a1306168280a' },
-            url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production'
-          });
-        }
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
-
-</body>
-</html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.voiceflow.com 'unsafe-inline'; connect-src https://general-runtime.voiceflow.com;">
+     <title>Heritage Strings & Arts</title>
+     <style>
+       /* Your existing CSS here */
+     </style>
+   </head>
+   <body>
+     <!-- Your existing body content here -->
+     <script type="text/javascript">
+       (function(d, t) {
+           var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+           v.onload = function() {
+             window.voiceflow.chat.load({
+               verify: { projectID: '66efef1e5fb6a1306168280a' },
+               url: 'https://general-runtime.voiceflow.com',
+               versionID: 'production'
+             });
+             console.log('Voiceflow chatbot loaded successfully');
+           }
+           v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+       })(document, 'script');
+     </script>
+   </body>
+   </html>
