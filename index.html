@@ -19,16 +19,6 @@
       background-size: 40px 40px;
     }
 
-    /* Heading and paragraph styling */
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
-
     /* Button styling */
     a {
       text-decoration: none;
@@ -40,7 +30,6 @@
       transition: background-color 0.3s ease;
     }
 
-    /* Button hover effect */
     a:hover {
       background-color: #ff4d4d;
     }
@@ -53,6 +42,21 @@
     <p>Do visit our official website for more details</p>
     <a href="https://heritagestrings.sg/">Click here</a>
   </div>
+
+  <!-- Insert your Voiceflow chatbot code here -->
+  <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '66efef1e5fb6a1306168280a' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production'
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
 
 </body>
 </html>
