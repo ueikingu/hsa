@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.voiceflow.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://general-runtime.voiceflow.com;">
   <title>Heritage Strings & Arts</title>
   <style>
     body {
@@ -39,25 +38,25 @@
     <a href="https://heritagestrings.sg/">Click here</a>
   </div>
 
-  <script type="text/javascript">
-    window.voiceflowRuntime = {
-      verify: { projectID: '66efef1e5fb6a1306168280a' },
-      url: 'https://general-runtime.voiceflow.com',
-      versionID: 'production'
-    };
-
-    function loadVoiceflow() {
-      console.log('Attempting to load Voiceflow');
-      if (window.voiceflow && window.voiceflow.chat) {
-        console.log('Voiceflow chat object found, loading...');
-        window.voiceflow.chat.load(window.voiceflowRuntime)
-          .then(() => console.log('Voiceflow chat loaded successfully'))
-          .catch(error => console.error('Error loading Voiceflow chat:', error));
-      } else {
-        console.error('Voiceflow chat object not found');
+  <script>
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '66efef1e5fb6a1306168280a' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        }).then(() => {
+          console.log('Voiceflow chat loaded successfully');
+        }).catch(error => {
+          console.error('Error loading Voiceflow chat:', error);
+        });
       }
-    }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+      v.type = "text/javascript"; 
+      v.async = true;
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
   </script>
-  <script src="https://cdn.voiceflow.com/widget/bundle.js" type="text/javascript" onload="loadVoiceflow()"></script>
 </body>
 </html>
